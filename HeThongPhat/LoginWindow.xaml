@@ -1,0 +1,99 @@
+﻿<Window x:Class="HeThongPhat.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Đăng Nhập" Height="740" Width="500"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="25" ShadowDepth="2" Opacity="0.3" Color="Black"/>
+    </Window.Effect>
+
+    <Border CornerRadius="20" Background="White" Margin="15" BorderBrush="#EEEEEE" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="220"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#1B4332" CornerRadius="20,20,0,0">
+                <Grid>
+                    <Button x:Name="btnToggleSettings" Click="btnToggleSettings_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Background="Transparent" BorderBrush="Transparent" Cursor="Hand">
+                        <TextBlock Text="⚙" FontSize="24" Foreground="White" Opacity="0.5" Effect="{x:Null}"/>
+                    </Button>
+
+                    <StackPanel VerticalAlignment="Center" Margin="0,10,0,0">
+                        <Border Width="110" Height="110" CornerRadius="55" Background="White" HorizontalAlignment="Center" BorderBrush="#EEEEEE" BorderThickness="1">
+                            <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Logo.png" Margin="6" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="Học Viện Phòng Không Không Quân" Foreground="White" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,18,0,0"/>
+                        <TextBlock Text="Khoa Rada" Foreground="White" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Margin="40,25,40,20">
+
+                <StackPanel x:Name="LoginPanel" Visibility="Visible">
+                    <Border Background="#E3F2FD" Padding="15,10" CornerRadius="12" Margin="0,0,0,25">
+                        
+                    </Border>
+
+                    <TextBlock Text="TÊN ĐĂNG NHẬP" FontSize="12" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,6"/>
+                    <TextBox x:Name="txtUser" Text="viewer" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" Margin="0,0,0,18" CaretBrush="#1B4332" FontSize="14"/>
+
+                    <TextBlock Text="MẬT KHẨU" FontSize="12" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,6"/>
+                    <Grid>
+                        <PasswordBox x:Name="txtPassHidden" Password="123456" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" CaretBrush="#1B4332" FontSize="14" Visibility="Visible"/>
+                        <TextBox x:Name="txtPassVisible" Text="" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" CaretBrush="#1B4332" FontSize="14" Visibility="Collapsed"/>
+
+                        <Button x:Name="btnTogglePass" Click="btnTogglePass_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,12,0" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Cursor="Hand">
+                            <TextBlock x:Name="txtTogglePassGlyph" Text="👁" FontSize="18"/>
+                        </Button>
+                    </Grid>
+
+                    <Button Content="ĐĂNG NHẬP HỆ THỐNG" Click="btnLogIn_Click" Background="#1B4332" Foreground="White" FontWeight="Bold" Height="50" Margin="0,35,0,0" Cursor="Hand">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.2" Color="Black"/>
+                        </Button.Effect>
+                    </Button>
+
+                    <TextBlock Text="Phiên bản 2.0.1 (Web Edition)" Foreground="LightGray" HorizontalAlignment="Center" Margin="0,25,0,0" FontSize="11"/>
+                </StackPanel>
+
+                <Border x:Name="SettingsPanel" Visibility="Collapsed" Background="White" BorderBrush="#DEE2E6" BorderThickness="1" CornerRadius="15">
+                    <Grid Margin="20">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,20">
+                                <TextBlock Text="⚙ Cài đặt hệ thống" FontSize="20" FontWeight="Bold" Foreground="#1B4332"/>
+                                <Button Content="✕" Click="btnToggleSettings_Click" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="18" Foreground="Gray"/>
+                            </Grid>
+
+                            <TextBlock Text="TÊN TIÊU ĐỀ" FontSize="11" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,4"/>
+                            <TextBox Text="KHOA QUÂN SỰ CHUNG" Padding="10,8" Margin="0,0,0,15" Background="#F9F9F9" BorderBrush="#E0E0E0"/>
+
+                            <TextBlock Text="URL LOGO" FontSize="11" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,4"/>
+                            <TextBox Text="https://res.cloudinary.com/..." Padding="10,8" Margin="0,0,0,15" Background="#F9F9F9" BorderBrush="#E0E0E0" Foreground="LightGray"/>
+
+                            <TextBlock Text="ĐỔI MẬT KHẨU ADMIN" FontSize="11" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,4"/>
+                            <PasswordBox Password="******" Padding="10,8" Margin="0,0,0,15" Background="#F9F9F9" BorderBrush="#E0E0E0"/>
+
+                            <Button Content="LƯU THAY ĐỔI" Click="btnToggleSettings_Click" Background="#2196F3" Foreground="White" FontWeight="Bold" Height="45" Margin="0,15,0,0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="8"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

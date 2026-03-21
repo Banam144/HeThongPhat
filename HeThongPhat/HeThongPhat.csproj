@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Background.png" />
+    <None Remove="Assets\Banner.png" />
+    <None Remove="Assets\Bodieuche.png" />
+    <None Remove="Assets\logo.ico" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\Nen.png" />
+    <None Remove="Assets\TuKDCS.png" />
+    <None Remove="Assets\TuKDSB.png" />
+    <None Remove="Assets\Tunancaoap.png" />
+    <None Remove="Assets\Tutaotinhieu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Background.png" />
+    <Resource Include="Assets\Banner.png" />
+    <Resource Include="Assets\Bodieuche.png" />
+    <Resource Include="Assets\logo.ico" />
+    <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\Nen.png" />
+    <Resource Include="Assets\TuKDCS.png" />
+    <Resource Include="Assets\TuKDSB.png" />
+    <Resource Include="Assets\Tunancaoap.png" />
+    <Resource Include="Assets\Tutaotinhieu.png" />
+  </ItemGroup>
+
+</Project>

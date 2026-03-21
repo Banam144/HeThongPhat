@@ -1,0 +1,262 @@
+﻿<Window x:Class="HeThongPhat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeThongPhat"
+        mc:Ignorable="d"
+        Title="Hệ thống Quản lý - Khoa Quân RaDa" Height="750" Width="1300"
+        Icon="/Assets/logo.ico"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/HeThongPhat;component/Assets/Background.png" 
+                    Stretch="UniformToFill"/>
+    </Window.Background>
+
+    <Window.Resources>
+        <Style x:Key="SidebarItemStyle" TargetType="Border">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="15,0,15,10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F2F5FA"/> 
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SidebarExitStyle" TargetType="Border">
+            <Setter Property="Background" Value="#FFE4E1"/> 
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFE0DC"/> 
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="1118*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" CornerRadius="0,0,20,20" Grid.ColumnSpan="4">
+            <Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/HeThongPhat;component/Assets/Banner.png" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Top"/>
+            </Border.Background>
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="5" Color="Black" Opacity="0.3"/>
+            </Border.Effect>
+
+            <Grid Margin="30,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Width="100" Height="100" CornerRadius="50" BorderBrush="White" BorderThickness="3" Background="White" VerticalAlignment="Center">
+                    <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Logo.png" Margin="6" Stretch="Uniform"/>
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="25,0,0,0">
+                    <TextBlock Text="KHOA RADA" FontStyle="Normal" FontWeight="Bold" FontSize="36">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush x:Name="TextColorBrush" Color="#FFD700"/>
+                        </TextBlock.Foreground>
+
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="2" Color="Black" Opacity="0.5"/>
+                        </TextBlock.Effect>
+
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="TextColorBrush"
+                                                  Storyboard.TargetProperty="Color"
+                                                  Duration="0:0:3"
+                                                  RepeatBehavior="Forever">
+                                            <LinearColorKeyFrame KeyTime="0:0:0" Value="#FFD700"/>
+                                            <SplineColorKeyFrame KeyTime="0:0:1" Value="#00BFFF"/>
+                                            <SplineColorKeyFrame KeyTime="0:0:2" Value="#9932CC"/>
+                                            <SplineColorKeyFrame KeyTime="0:0:3" Value="#FFD700"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+                    <TextBlock Text="KHOAQSC@GMAIL.COM" FontWeight="Bold" FontSize="16" Foreground="#DC3545" Margin="5,10,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="4" Background="#CC1A233A" ClipToBounds="True">
+            <Canvas>
+                <TextBlock Text="CHÀO MỪNG CÁC ĐỒNG CHÍ ĐẾN VỚI HỆ THỐNG QUẢN LÝ DỮ LIỆU KHOA RADA!    CHÀO MỪNG CÁC ĐỒNG CHÍ ĐẾN VỚI HỆ THỐNG QUẢN LÝ DỮ LIỆU KHOA RADA!" 
+                           Foreground="#FFD700" FontSize="16" Canvas.Top="6" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="Marquee" X="1920"/>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="Marquee" 
+                                                     Storyboard.TargetProperty="X" 
+                                                     From="1920" To="-1000" 
+                                                     Duration="0:0:15" 
+                                                     RepeatBehavior="Forever"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+            </Canvas>
+        </Border>
+        <Grid Grid.Row="2" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/> 
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Margin="15,30,15,15" CornerRadius="20" Background="#D9FFFFFF">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/> 
+                        <RowDefinition Height="Auto"/> 
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+                        <Grid Margin="15,15,15,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="DANH MỤC" FontWeight="Bold" FontSize="14" Foreground="#4D4D4D"/>
+                            
+                        </Grid>
+
+                        <StackPanel Margin="0,20,0,0">
+                            <Border Style="{StaticResource SidebarItemStyle}" MouseLeftButtonDown="MenuGiaoTrinh_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="📚" FontSize="18" Foreground="#4D4D4D"/>
+                                    <TextBlock Grid.Column="1" Text="Giáo trình" FontWeight="Bold" FontSize="16" Foreground="#4D4D4D" Margin="15,0,0,0"/>
+                                    <TextBlock Grid.Column="2" Text=">" FontSize="18" Foreground="#4D4D4D" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Style="{StaticResource SidebarItemStyle}" MouseLeftButtonDown="MenuBaiGiang_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="📂" FontSize="18" Foreground="#4D4D4D"/>
+                                    <TextBlock Grid.Column="1" Text="Bài giảng" FontWeight="Bold" FontSize="16" Foreground="#4D4D4D" Margin="15,0,0,0"/>
+                                    <TextBlock Grid.Column="2" Text=">" FontSize="18" Foreground="#4D4D4D" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Style="{StaticResource SidebarItemStyle}" MouseLeftButtonDown="MenuDuLieuMoPhong_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="📝" FontSize="18" Foreground="#4D4D4D"/>
+                                    <TextBlock Grid.Column="1" Text="Dữ liệu mô phỏng" FontWeight="Bold" FontSize="16" Foreground="#4D4D4D" Margin="15,0,0,0"/>
+                                    <TextBlock Grid.Column="2" Text=">" FontSize="18" Foreground="#4D4D4D" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Style="{StaticResource SidebarItemStyle}" MouseLeftButtonDown="MenuTN_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="🖼️" FontSize="18" Foreground="#4D4D4D"/>
+                                    <TextBlock Grid.Column="1" Text="Thi trắc nghiệm" FontWeight="Bold" FontSize="16" Foreground="#4D4D4D" Margin="15,0,0,0"/>
+                                    <TextBlock Grid.Column="2" Text=">" FontSize="18" Foreground="#4D4D4D" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Style="{StaticResource SidebarItemStyle}" MouseLeftButtonDown="MenuVideo_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="🎬" FontSize="18" Foreground="#4D4D4D"/>
+                                    <TextBlock Grid.Column="1" Text="Video" FontWeight="Bold" FontSize="16" Foreground="#4D4D4D" Margin="15,0,0,0"/>
+                                    <TextBlock Grid.Column="2" Text=">" FontSize="18" Foreground="#4D4D4D" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <Border Style="{StaticResource SidebarExitStyle}" MouseLeftButtonDown="BtnThoat_Click">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock Text="🚪" FontSize="18" Foreground="#DC3545"/>
+                                <TextBlock Text="Thoát chương trình" FontWeight="Bold" FontSize="16" Foreground="#DC3545" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1" Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock x:Name="txtMainTitle" FontWeight="Bold" FontSize="22" Foreground="#FFD700">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="6" ShadowDepth="3" Color="Black" Opacity="0.9"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
+
+                <Grid Grid.Row="2" Margin="0,10,0,0">
+
+                    <ScrollViewer Grid.Row="2" x:Name="scrollCards" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                        <WrapPanel x:Name="wrpCards" Margin="0,10,0,0">
+                        </WrapPanel>
+                    </ScrollViewer>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
