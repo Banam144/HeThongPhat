@@ -95,7 +95,7 @@
                 <ColumnDefinition Width="1.3*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="pack://application:,,,/HeThongPhat;component/Assets/TuTTH.png" Grid.Column="0" Stretch="Fill" />
+            <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Tutaotinhieu.png" Grid.Column="0" Stretch="Fill" />
 
             <Border Grid.Column="1" Background="#1B4332" Padding="10" BorderThickness="1,0,0,0">
                 <Grid>
