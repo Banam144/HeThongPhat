@@ -40,11 +40,11 @@
                     </Border>
 
                     <TextBlock Text="TÊN ĐĂNG NHẬP" FontSize="12" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,6"/>
-                    <TextBox x:Name="txtUser" Text="viewer" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" Margin="0,0,0,18" CaretBrush="#1B4332" FontSize="14"/>
+                    <TextBox x:Name="txtUser"  Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" Margin="0,0,0,18" CaretBrush="#1B4332" FontSize="14"/>
 
                     <TextBlock Text="MẬT KHẨU" FontSize="12" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,6"/>
                     <Grid>
-                        <PasswordBox x:Name="txtPassHidden" Password="123456" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" CaretBrush="#1B4332" FontSize="14" Visibility="Visible"/>
+                        <PasswordBox x:Name="txtPassHidden"  Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" CaretBrush="#1B4332" FontSize="14" Visibility="Visible"/>
                         <TextBox x:Name="txtPassVisible" Text="" Padding="12,10" Background="#F8F9FA" BorderBrush="#DEE2E6" CaretBrush="#1B4332" FontSize="14" Visibility="Collapsed"/>
 
                         <Button x:Name="btnTogglePass" Click="btnTogglePass_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,12,0" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Cursor="Hand">

@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeThongPhat"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             >
 
     <UserControl.Resources>
         <Style x:Key="ModernButton" TargetType="Button">
@@ -30,42 +31,101 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8.7*"/>
-            <ColumnDefinition Width="1.3*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Tutaotinhieu.png" Grid.Column="0" Stretch="Fill" />
+        <Border Grid.Row="0" CornerRadius="0,0,10,10" ClipToBounds="True">
+            <Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/HeThongPhat;component/Assets/Banner.png" Stretch="UniformToFill" AlignmentY="Top"/>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="3" Color="Black" Opacity="0.4"/>
+            </Border.Effect>
 
-        <Border Grid.Column="1" Background="#1B4332" Padding="10" BorderThickness="1,0,0,0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <Grid Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <Viewbox Grid.Row="0" Stretch="Uniform" VerticalAlignment="Top" Margin="0,0,0,20">
-                    <StackPanel Width="200">
-                        <Button Content="▶ START" Style="{StaticResource ModernButton}" Background="#FF28A745" Click="btnStart_Click"/>
-                        <Button Content="⏸ PAUSE" Style="{StaticResource ModernButton}" Background="#FFFD7E14" Click="btnPause_Click"/>
-                        <Button Content="⏹ END" Style="{StaticResource ModernButton}" Background="#FFDC3545" Click="btnStop_Click"/>
-                    </StackPanel>
-                </Viewbox>
-
-                <Border Grid.Row="1" Background="#050505" BorderBrush="#333333" BorderThickness="2" CornerRadius="12" Padding="5">
-                    <Grid>
-                        <TextBlock Text="MONITOR" Foreground="#444444" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0"/>
-
-                        <Viewbox VerticalAlignment="Center" Margin="10">
-                            <TextBlock x:Name="txtTrangThai" Text="READY" Foreground="#00BFFF" FontWeight="Bold" FontFamily="Consolas">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect x:Name="glowTrangThai" Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                        </Viewbox>
-                    </Grid>
+                <Border Grid.Column="0" Width="70" Height="70" CornerRadius="35" BorderBrush="White" BorderThickness="2" Background="White" VerticalAlignment="Center">
+                    <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Logo.png" Margin="4" Stretch="Uniform"/>
                 </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <TextBlock Text="KHOA RADA - TỦ TẠO TÍN HIỆU PHÁT VÀ NGOẠI SAI" FontWeight="Bold" FontSize="28" Foreground="#FFD700">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="Black" Opacity="0.8"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
             </Grid>
         </Border>
+
+        <Border Grid.Row="1" Background="#CC1A233A" ClipToBounds="True" Margin="0,5,0,0">
+            <Canvas>
+                <TextBlock Text="ĐANG HIỂN THỊ SƠ ĐỒ KHỐI CHỨC NĂNG TỦ TẠO TÍN HIỆU PHÁT VÀ NGOẠI SAI - HỆ THỐNG RADAR 36D6 M1-1" 
+                           Foreground="#00E5FF" FontSize="14" Canvas.Top="5" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="MarqueeTuTTH" X="1920"/>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="MarqueeTuTTH" 
+                                                     Storyboard.TargetProperty="X" 
+                                                     From="1920" To="-1000" 
+                                                     Duration="0:0:15" 
+                                                     RepeatBehavior="Forever"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+            </Canvas>
+        </Border>
+
+        <Grid Grid.Row="2" Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8.7*"/>
+                <ColumnDefinition Width="1.3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="pack://application:,,,/HeThongPhat;component/Assets/TuTTH.png" Grid.Column="0" Stretch="Fill" />
+
+            <Border Grid.Column="1" Background="#1B4332" Padding="10" BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Viewbox Grid.Row="0" Stretch="Uniform" VerticalAlignment="Top" Margin="0,0,0,20">
+                        <StackPanel Width="200">
+                            <Button Content="▶ START" Style="{StaticResource ModernButton}" Background="#FF28A745" Click="btnStart_Click"/>
+                            <Button Content="⏸ PAUSE" Style="{StaticResource ModernButton}" Background="#FFFD7E14" Click="btnPause_Click"/>
+                            <Button Content="⏹ END" Style="{StaticResource ModernButton}" Background="#FFDC3545" Click="btnStop_Click"/>
+                        </StackPanel>
+                    </Viewbox>
+
+                    <Border Grid.Row="1" Background="#050505" BorderBrush="#333333" BorderThickness="2" CornerRadius="12" Padding="5">
+                        <Grid>
+                            <TextBlock Text="MONITOR" Foreground="#444444" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                            <Viewbox VerticalAlignment="Center" Margin="10">
+                                <TextBlock x:Name="txtTrangThai" Text="READY" Foreground="#00BFFF" FontWeight="Bold" FontFamily="Consolas">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect x:Name="glowTrangThai" Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

@@ -18,25 +18,21 @@ namespace HeThongPhat
         // Đã thêm tham số 'windowTag' để gắn thông tin cửa sổ vào thẻ
         private Border CreateModernDataCard(string title, string subtitle, Color themeColor, string iconEmoji, string windowTag)
         {
+            // 1. Chỉ giữ lại Kích thước, Margin và Tag (Vì mỗi thẻ giống nhau cái này)
             var cardFrame = new Border
             {
                 Width = 230,
                 Height = 190,
-                Background = Brushes.White,
-                CornerRadius = new CornerRadius(15),
                 Margin = new Thickness(0, 0, 25, 25),
-                Cursor = System.Windows.Input.Cursors.Hand,
                 Tag = windowTag // Gắn tên cửa sổ vào đây để code biết cửa sổ nào cần mở
             };
 
-            cardFrame.Effect = new DropShadowEffect
-            {
-                BlurRadius = 30,
-                ShadowDepth = 5,
-                Color = Colors.Black,
-                Opacity = 0.1
-            };
+            // 2. BÍ THUẬT: Gọi Style có chứa hiệu ứng Hover từ file XAML đắp vào đây
+            cardFrame.Style = (Style)FindResource("RadarCardStyle");
 
+            // ĐÃ XÓA ĐOẠN cardFrame.Effect VÌ TRONG STYLE ĐÃ CÓ SẴN BÓNG ĐỔ RỒI NHÉ NAM!
+
+            // 3. Phần ruột bên trong (Icon, Chữ) giữ nguyên y hệt
             var cardContent = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
             cardFrame.Child = cardContent;
 
@@ -125,11 +121,11 @@ namespace HeThongPhat
             // 3. Khai báo 5 khối dữ liệu mới lấy từ sơ đồ Nam gửi, kèm tên cửa sổ
             var radarModules = new[]
             {
-                new { Title = "Tủ điều chế", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(255, 87, 34), Emoji = "🎛️", Window = "TuDC" },
-                new { Title = "Nắn dòng cao áp", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(233, 30, 99), Emoji = "⚡", Window = "TunanDCA" },
+                new { Title = "Tạo tín hiệu phát", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(76, 175, 80), Emoji = "📡", Window = "TuTTH" },
                 new { Title = "Khuếch đại sơ bộ", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(33, 150, 243), Emoji = "📻", Window = "TuKDSB" },
                 new { Title = "Khuếch đại công suất", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(244, 67, 54), Emoji = "🔋", Window = "TuKDCS" },
-                new { Title = "Tạo tín hiệu thăm dò", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(76, 175, 80), Emoji = "📡", Window = "TuTTH" }
+                new { Title = "Tủ điều chế", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(255, 87, 34), Emoji = "🎛️", Window = "TuDC" },
+                new { Title = "Nắn dòng cao áp", Sub = "KHỐI CHỨC NĂNG", Color = Color.FromRgb(233, 30, 99), Emoji = "⚡", Window = "TunanDCA" }
             };
 
             // 4. Vòng lặp vẽ 5 cái Thẻ (Card) mới tinh lên màn hình
@@ -223,8 +219,8 @@ namespace HeThongPhat
                 {
                     Title = windowTitle,
                     Content = targetControl, // Nhét bức tranh (UserControl) vào khung (Window)
-                    Width = 1000,            // Độ rộng cửa sổ pop-up (Nam có thể chỉnh lại)
-                    Height = 700,            // Chiều cao cửa sổ pop-up
+                    WindowStyle = WindowStyle.None,        // Xóa thanh tiêu đề (mất nút X, thu bé)
+                    WindowState = WindowState.Maximized,   // Phóng to tràn toàn bộ màn hình
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     Owner = this,
                     // WindowStyle = WindowStyle.ToolWindow // Bỏ comment dòng này nếu muốn cửa sổ popup trông giống thanh công cụ nhỏ

@@ -24,7 +24,26 @@ namespace HeThongPhat
         // Chức năng: Bấm nút Đăng Nhập
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            if (txtUser.Text == "viewer" && txtPassHidden.Password == "123456")
+            // 1. Lấy dữ liệu người dùng nhập (xóa khoảng trắng thừa)
+            string username = txtUser.Text.Trim();
+
+            // Lấy mật khẩu tùy theo trạng thái "con mắt" đang đóng hay mở
+            string password = txtPassHidden.Visibility == Visibility.Visible
+                              ? txtPassHidden.Password
+                              : txtPassVisible.Text;
+
+            // 2. Chốt chặn: Kiểm tra xem có ô nào bị bỏ trống không
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Đồng chí vui lòng nhập đầy đủ Tên đăng nhập và Mật khẩu!",
+                                "Thông báo",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
+                return; // Lệnh này giúp dừng ngay lập tức, không chạy phần kiểm tra đúng/sai bên dưới nữa
+            }
+
+            // 3. Nếu đã nhập đủ, tiến hành kiểm tra đúng sai (Tài khoản: viewer / Mật khẩu: 123456)
+            if (username == "viewer" && password == "123456")
             {
                 // Mở giao diện chính và đóng cửa sổ đăng nhập
                 var main = new MainWindow();

@@ -19,6 +19,7 @@
     <None Remove="Assets\TuKDSB.png" />
     <None Remove="Assets\Tunancaoap.png" />
     <None Remove="Assets\Tutaotinhieu.png" />
+    <None Remove="Assets\TuTTH.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +33,7 @@
     <Resource Include="Assets\TuKDSB.png" />
     <Resource Include="Assets\Tunancaoap.png" />
     <Resource Include="Assets\Tutaotinhieu.png" />
+    <Resource Include="Assets\TuTTH.png" />
   </ItemGroup>
 
 </Project>

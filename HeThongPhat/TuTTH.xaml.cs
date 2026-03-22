@@ -47,13 +47,14 @@ namespace HeThongPhat
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-            var blueColor = Color.FromRgb(0, 191, 255);
-            txtTrangThai.Text = "READY";
-            txtTrangThai.Foreground = new SolidColorBrush(blueColor);
-            glowTrangThai.Color = blueColor;
+            // Tìm cái Window đang chứa UserControl này
+            Window parentWindow = Window.GetWindow(this);
 
-            // 2. BẮN PHÁO SÁNG: Báo cho Form1 xử lý việc ẩn sơ đồ
-            EndButtonClicked?.Invoke(this, EventArgs.Empty);
+            // Nếu tìm thấy, đóng nó lại
+            if (parentWindow != null)
+            {
+                parentWindow.Close();
+            }
         }
     }
 }
