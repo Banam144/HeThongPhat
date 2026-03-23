@@ -100,12 +100,12 @@
                 <Canvas x:Name="SimulationCanvas" Width="1200" Height="800">
                     <Image Source="pack://application:,,,/HeThongPhat;component/Assets/TuKDCS.png" Width="1200" Height="800" Stretch="Fill"/>
 
-                    <Path x:Name="day1" Height="395" Canvas.Left="480.551" Stroke="Transparent" Stretch="Fill" Canvas.Top="382.629" Width="56" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Path x:Name="day1" Height="395" Canvas.Left="480.551" Stroke="Transparent" Stretch="Fill" Canvas.Top="382.629" Width="56">
                         <Path.Data>
                             <PathGeometry Figures="M480.55147,776.78601 L481.35978,383.50088 525.25085,382.62824"/>
                         </Path.Data>
                     </Path>
-                    <Path x:Name="day2" Height="75" Canvas.Left="30.222" Stroke="Transparent" Stretch="Fill" Canvas.Top="234.799" Width="512" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Path x:Name="day2" Height="75" Canvas.Left="30.222" Stroke="Transparent" Stretch="Fill" Canvas.Top="234.799" Width="512">
                         <Path.Data>
                             <PathGeometry Figures="M30.221786,234.79919 L488.11621,235.60722 488.88235,263.98476 518.7067,265.14188 540.32752,295.52272"/>
                         </Path.Data>
@@ -120,12 +120,12 @@
                             <PathGeometry Figures="M1022.2113,199.48777 L1170.8043,83.026546"/>
                         </Path.Data>
                     </Path>
-                    <Path x:Name="day5" Height="72" Canvas.Left="1011.749" Stroke="Transparent" Stretch="Fill" Canvas.Top="246.57" Width="24" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Path x:Name="day5" Height="72" Canvas.Left="1011.749" Stroke="Transparent" Stretch="Fill" Canvas.Top="246.57" Width="24">
                         <Path.Data>
                             <PathGeometry Figures="M1011.7487,246.56967 L1034.0264,287.48398 1034.749,317.85073"/>
                         </Path.Data>
                     </Path>
-                    <Path x:Name="day6" Height="137" Canvas.Left="287.909" Stroke="Transparent" Stretch="Fill" Canvas.Top="59.377" Width="696" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Path x:Name="day6" Height="137" Canvas.Left="287.909" Stroke="Transparent" Stretch="Fill" Canvas.Top="59.377" Width="696">
                         <Path.Data>
                             <PathGeometry Figures="M983.08539,195.56427 L910.65509,59.377116 284.18769,65.052028"/>
                         </Path.Data>
@@ -138,10 +138,10 @@
                             </TransformGroup>
                         </Path.RenderTransform>
                     </Path>
-                    <Path x:Name="nhipTimMau2" Data="{StaticResource PulseShape}" Stroke="#FF00FF19" StrokeThickness="2" Opacity="0">
+                    <Path x:Name="nhipTimMau2" Data="M -12,0 L -6,0 L -6,12 L 6,12 L 6,0 L 12,0" Stroke="DarkBlue" StrokeThickness="2" Opacity="0" StrokeLineJoin="Miter">
                         <Path.RenderTransform>
                             <TransformGroup>
-                                <RotateTransform Angle="89.168"/>
+                                <RotateTransform Angle="0"/>
                                 <TranslateTransform x:Name="trans2"/>
                             </TransformGroup>
                         </Path.RenderTransform>
@@ -179,86 +179,193 @@
                         </Path.RenderTransform>
                     </Path>
 
-                    <Rectangle x:Name="diot" Height="61" Canvas.Left="251.245" Stroke="Transparent" Canvas.Top="201.377" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <Rectangle x:Name="_194BB50" Height="61" Canvas.Left="358.778" Stroke="Transparent" Canvas.Top="201.377" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                    <Rectangle x:Name="denKlistron" Height="81" Canvas.Left="536.551" Stroke="Transparent" Canvas.Top="318.57" Width="322"/>
-                    <Rectangle x:Name="_1944BB05" Height="57" Canvas.Left="896.452" Stroke="Transparent" Canvas.Top="242.464" Width="63" RadiusX="0" RadiusY="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <RotateTransform Angle="-36.491"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                    <Rectangle x:Name="_1944BB08" Height="51" Canvas.Left="966.809" Stroke="Transparent" Canvas.Top="194.308" Width="63" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="-37.743"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                    <Rectangle x:Name="_194BB72" Height="48" Canvas.Left="993.657" Stroke="Transparent" Canvas.Top="325.735" Width="80"/>
-                    <Rectangle x:Name="_194TB02M" Height="47" Canvas.Left="809.689" Stroke="Transparent" Canvas.Top="37.5" Width="81" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <Rectangle x:Name="Hop" Height="62" Canvas.Left="358.778" Stroke="Transparent" Canvas.Top="37.5" Width="82" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <Rectangle x:Name="_194TB02" Height="55" Canvas.Left="196.098" Stroke="Transparent" Canvas.Top="37.5" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <Path x:Name="diot" Fill="Transparent" Height="61" Canvas.Left="249.68" Stroke="Transparent" Stretch="Fill" Canvas.Top="203.056" Width="50">
+                        <Path.Data>
+                            <PathGeometry Figures="M299.46121,262.98413 L299.46121,203.05569 249.96717,203.22435 249.67686,262.58205 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="_194bb50" Fill="Transparent" Height="59" Canvas.Left="357.498" Stroke="Transparent" Stretch="Fill" Canvas.Top="203.916" Width="71">
+                        <Path.Data>
+                            <PathGeometry Figures="M427.15517,262.20811 L427.15517,204.14207 357.49827,203.91604 357.87961,261.99917 z"/>
+                        </Path.Data>
+                    </Path>
 
-                    <Rectangle x:Name="light_diot" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="251.245" Canvas.Top="200.027" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Rectangle.Effect>
+                    <Rectangle x:Name="denKlistron" Height="81" Canvas.Left="536.551" Stroke="Transparent" Canvas.Top="318.57" Width="322"/>
+
+                    <Path x:Name="_194bb05" Fill="Transparent" Height="86" Canvas.Left="890.613" Stroke="Transparent" Stretch="Fill" Canvas.Top="227.902" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M890.61303,266.32804 L939.15521,227.90215 968.49727,275.84099 920.33855,314.70993 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="_194bb08" Fill="Transparent" Height="87" Canvas.Left="959.77" Stroke="Transparent" Stretch="Fill" Canvas.Top="175.754" Width="79">
+                        <Path.Data>
+                            <PathGeometry Figures="M959.77011,213.95414 L1007.3545,175.75412 1037.1386,223.1841 989.10739,262.0959 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="_194bb72" Fill="Transparent" Height="48" Canvas.Left="994.615" Stroke="Transparent" Stretch="Fill" Canvas.Top="322.04" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M994.82759,322.53968 L1073.6375,322.03936 1073.1612,345.41855 994.61503,345.41855 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="_194tb02m" Fill="Transparent" Height="51" Canvas.Left="808.169" Stroke="Transparent" Stretch="Fill" Canvas.Top="35.112" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M887.59579,84.825397 L887.59579,35.112387 808.16835,35.112387 808.16835,84.043305 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="hop" Fill="Transparent" Height="73" Canvas.Left="360.707" Stroke="Transparent" Stretch="Fill" Canvas.Top="23.204" Width="96">
+                        <Path.Data>
+                            <PathGeometry Figures="M361.2069,95.492063 L360.70681,43.521229 368.89792,23.215327 409.25316,23.894881 409.4587,77.263243 401.11214,94.939388 z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="_194tb02" Fill="Transparent" Height="57" Canvas.Left="195.761" Stroke="Transparent" Stretch="Fill" Canvas.Top="35.556" Width="92">
+                        <Path.Data>
+                            <PathGeometry Figures="M195.76149,35.555556 L286.64129,35.555556 286.80824,90.589504 195.83674,91.639976 z"/>
+                        </Path.Data>
+                    </Path>
+
+                    <Path x:Name="light_diot" Fill="#7FADFF2F" Opacity="0" Height="61" Canvas.Left="249.68" Stretch="Fill" Canvas.Top="203.056" Width="50">
+                        <Path.Data>
+                            <PathGeometry Figures="M299.46121,262.98413 L299.46121,203.05569 249.96717,203.22435 249.67686,262.58205 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_194BB50" Fill="#7FADFF2F" Opacity="0" Height="71" Canvas.Left="358.778" Canvas.Top="201.377" Width="70">
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_194bb50" Fill="#7FADFF2F" Opacity="0" Height="59" Canvas.Left="357.498" Stretch="Fill" Canvas.Top="203.916" Width="71">
+                        <Path.Data>
+                            <PathGeometry Figures="M427.15517,262.20811 L427.15517,204.14207 357.49827,203.91604 357.87961,261.99917 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
+                        </Path.Effect>
+                    </Path>
+
                     <Rectangle x:Name="light_denKlistron" Fill="#7FADFF2F" Opacity="0" Height="81" Canvas.Left="536.551" Canvas.Top="318.57" Width="322">
                         <Rectangle.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="30" ShadowDepth="0" Opacity="0.8"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Rectangle x:Name="light_1944BB05" Fill="#7FADFF2F" Opacity="0" Height="57" Canvas.Left="896.452" Canvas.Top="242.464" Width="63" RenderTransformOrigin="0.5,0.5">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <RotateTransform Angle="-36.491"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Effect>
+
+                    <Path x:Name="light_194bb05" Fill="#7FADFF2F" Opacity="0" Height="86" Canvas.Left="890.613" Stretch="Fill" Canvas.Top="227.902" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M890.61303,266.32804 L939.15521,227.90215 968.49727,275.84099 920.33855,314.70993 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_1944BB08" Fill="#7FADFF2F" Opacity="0" Height="51" Canvas.Left="970.603" Canvas.Top="193.028" Width="59" RenderTransformOrigin="0.5,0.5">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <RotateTransform Angle="-35.819"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_194bb08" Fill="#7FADFF2F" Opacity="0" Height="87" Canvas.Left="959.77" Stretch="Fill" Canvas.Top="175.754" Width="79">
+                        <Path.Data>
+                            <PathGeometry Figures="M959.77011,213.95414 L1007.3545,175.75412 1037.1386,223.1841 989.10739,262.0959 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_194BB72" Fill="#7FADFF2F" Opacity="0" Height="48" Canvas.Left="993.657" Canvas.Top="325.735" Width="80">
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_194bb72" Fill="#7FADFF2F" Opacity="0" Height="48" Canvas.Left="994.615" Stretch="Fill" Canvas.Top="322.04" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M994.82759,322.53968 L1073.6375,322.03936 1073.1612,345.41855 994.61503,345.41855 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_194TB02M" Fill="#7FADFF2F" Opacity="0" Height="47" Canvas.Left="809.689" Canvas.Top="37.5" Width="81">
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_194tb02m" Fill="#7FADFF2F" Opacity="0" Height="51" Canvas.Left="808.169" Stretch="Fill" Canvas.Top="35.112" Width="80">
+                        <Path.Data>
+                            <PathGeometry Figures="M887.59579,84.825397 L887.59579,35.112387 808.16835,35.112387 808.16835,84.043305 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_Hop" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="358.778" Canvas.Top="37.5" Width="82">
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_hop" Fill="#7FADFF2F" Opacity="0" Height="73" Canvas.Left="360.707" Stretch="Fill" Canvas.Top="23.204" Width="96">
+                        <Path.Data>
+                            <PathGeometry Figures="M361.2069,95.492063 L360.70681,43.521229 368.89792,23.215327 409.25316,23.894881 409.4587,77.263243 401.11214,94.939388 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle x:Name="light_194TB02" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="196.098" Canvas.Top="37.5" Width="92">
-                        <Rectangle.Effect>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="light_194tb02" Fill="#7FADFF2F" Opacity="0" Height="57" Canvas.Left="195.761" Stretch="Fill" Canvas.Top="35.556" Width="92">
+                        <Path.Data>
+                            <PathGeometry Figures="M195.76149,35.555556 L286.64129,35.555556 286.80824,90.589504 195.83674,91.639976 z"/>
+                        </Path.Data>
+                        <Path.Effect>
                             <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
+                        </Path.Effect>
+                    </Path>
+                    <Grid x:Name="txt_diot" Canvas.Left="249.68" Canvas.Top="203.056" Width="50" Height="61" Opacity="0">
+                        <TextBlock Text="ĐI ỐT BD" FontWeight="Bold" Foreground="White" FontSize="12" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194bb50" Canvas.Left="357.498" Canvas.Top="203.916" Width="71" Height="59" Opacity="0">
+                        <TextBlock Text="194BB50" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_denKlistron" Canvas.Left="536.551" Canvas.Top="318.57" Width="322" Height="81" Opacity="0">
+                        <TextBlock Text="Đèn Klistron" FontWeight="Bold" Foreground="White" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194bb05" Canvas.Left="890.613" Canvas.Top="227.902" Width="80" Height="86" Opacity="0">
+                        <TextBlock Text="194BB05" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194bb08" Canvas.Left="959.77" Canvas.Top="175.754" Width="79" Height="87" Opacity="0">
+                        <TextBlock Text="194BB08" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194bb72" Canvas.Left="994.615" Canvas.Top="322.04" Width="80" Height="48" Opacity="0">
+                        <TextBlock Text="194BB72" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194tb02m" Canvas.Left="808.169" Canvas.Top="35.112" Width="80" Height="51" Opacity="0">
+                        <TextBlock Text="194B02M" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_hop" Canvas.Left="360.707" Canvas.Top="23.204" Width="96" Height="73" Opacity="0">
+                        <TextBlock Text="HIỆN SÓNG&#x0a;TRẮC THỦ" FontWeight="Bold" Foreground="White" FontSize="12" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="txt_194tb02" Canvas.Left="195.761" Canvas.Top="35.556" Width="92" Height="57" Opacity="0">
+                        <TextBlock Text="194B02" FontWeight="Bold" Foreground="White" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+
                 </Canvas>
             </Viewbox>
 
