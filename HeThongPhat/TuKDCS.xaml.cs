@@ -25,16 +25,6 @@ namespace HeThongPhat
         {
             InitializeComponent();
 
-            // =======================================================
-            // KHỞI TẠO: Tàng hình dây và nhịp tim ngay khi mở UserControl
-            // =======================================================
-            day1.Fill = Brushes.Transparent; day1.Stroke = Brushes.Transparent;
-            day2.Fill = Brushes.Transparent; day2.Stroke = Brushes.Transparent;
-            day3.Fill = Brushes.Transparent; day3.Stroke = Brushes.Transparent;
-            day4.Fill = Brushes.Transparent; day4.Stroke = Brushes.Transparent;
-            day5.Fill = Brushes.Transparent; day5.Stroke = Brushes.Transparent;
-            day6.Fill = Brushes.Transparent; day6.Stroke = Brushes.Transparent;
-
             nhipTimMau1.Opacity = 0; nhipTimMau2.Opacity = 0;
             nhipTimMau3.Opacity = 0; nhipTimMau4.Opacity = 0;
             nhipTimMau5.Opacity = 0; nhipTimMau6.Opacity = 0;
