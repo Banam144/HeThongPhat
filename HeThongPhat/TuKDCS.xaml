@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeThongPhat"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920"
-             >
+             d:DesignHeight="1080" d:DesignWidth="1920">
 
     <UserControl.Resources>
+        <Geometry x:Key="PulseShape">M -10,0 L -5,0 L 0,-15 L 5,15 L 10,0 L 15,0</Geometry>
+
         <Style x:Key="ModernButton" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -95,7 +96,171 @@
                 <ColumnDefinition Width="1.3*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="pack://application:,,,/HeThongPhat;component/Assets/TuKDCS.png" Grid.Column="0" Stretch="Fill" />
+            <Viewbox Grid.Column="0" Stretch="Fill">
+                <Canvas x:Name="SimulationCanvas" Width="1200" Height="800">
+                    <Image Source="pack://application:,,,/HeThongPhat;component/Assets/TuKDCS.png" Width="1200" Height="800" Stretch="Fill"/>
+
+                    <Path x:Name="day1" Height="395" Canvas.Left="480.551" Stroke="Transparent" Stretch="Fill" Canvas.Top="382.629" Width="56" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Path.Data>
+                            <PathGeometry Figures="M480.55147,776.78601 L481.35978,383.50088 525.25085,382.62824"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="day2" Height="75" Canvas.Left="30.222" Stroke="Transparent" Stretch="Fill" Canvas.Top="234.799" Width="512" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Path.Data>
+                            <PathGeometry Figures="M30.221786,234.79919 L488.11621,235.60722 488.88235,263.98476 518.7067,265.14188 540.32752,295.52272"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="day3" Height="91" Canvas.Left="858.297" Stroke="Transparent" Stretch="Fill" Canvas.Top="234.735" Width="116">
+                        <Path.Data>
+                            <PathGeometry Figures="M858.29655,325.03951 L972.88522,234.73466"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="day4" Height="117" Canvas.Left="1022.211" Stroke="Transparent" Stretch="Fill" Canvas.Top="83.027" Width="150">
+                        <Path.Data>
+                            <PathGeometry Figures="M1022.2113,199.48777 L1170.8043,83.026546"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="day5" Height="72" Canvas.Left="1011.749" Stroke="Transparent" Stretch="Fill" Canvas.Top="246.57" Width="24" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <Path.Data>
+                            <PathGeometry Figures="M1011.7487,246.56967 L1034.0264,287.48398 1034.749,317.85073"/>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="day6" Height="137" Canvas.Left="287.909" Stroke="Transparent" Stretch="Fill" Canvas.Top="59.377" Width="696" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Path.Data>
+                            <PathGeometry Figures="M983.08539,195.56427 L910.65509,59.377116 284.18769,65.052028"/>
+                        </Path.Data>
+                    </Path>
+
+                    <Path x:Name="nhipTimMau1" Data="{StaticResource PulseShape}" Stroke="Red" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="trans1"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="nhipTimMau2" Data="{StaticResource PulseShape}" Stroke="#FF00FF19" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="89.168"/>
+                                <TranslateTransform x:Name="trans2"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="nhipTimMau3" Data="{StaticResource PulseShape}" Stroke="Red" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-37.079"/>
+                                <TranslateTransform x:Name="trans3"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="nhipTimMau4" Data="{StaticResource PulseShape}" Stroke="Red" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-37.079"/>
+                                <TranslateTransform x:Name="trans4"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="nhipTimMau5" Data="{StaticResource PulseShape}" Stroke="Red" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-125.808"/>
+                                <TranslateTransform x:Name="trans5"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="nhipTimMau6" Data="{StaticResource PulseShape}" Stroke="Red" StrokeThickness="2" Opacity="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-121.918"/>
+                                <TranslateTransform x:Name="trans6"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+
+                    <Rectangle x:Name="diot" Height="61" Canvas.Left="251.245" Stroke="Transparent" Canvas.Top="201.377" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle x:Name="_194BB50" Height="61" Canvas.Left="358.778" Stroke="Transparent" Canvas.Top="201.377" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <Rectangle x:Name="denKlistron" Height="81" Canvas.Left="536.551" Stroke="Transparent" Canvas.Top="318.57" Width="322"/>
+                    <Rectangle x:Name="_1944BB05" Height="57" Canvas.Left="896.452" Stroke="Transparent" Canvas.Top="242.464" Width="63" RadiusX="0" RadiusY="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-36.491"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle x:Name="_1944BB08" Height="51" Canvas.Left="966.809" Stroke="Transparent" Canvas.Top="194.308" Width="63" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-37.743"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle x:Name="_194BB72" Height="48" Canvas.Left="993.657" Stroke="Transparent" Canvas.Top="325.735" Width="80"/>
+                    <Rectangle x:Name="_194TB02M" Height="47" Canvas.Left="809.689" Stroke="Transparent" Canvas.Top="37.5" Width="81" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle x:Name="Hop" Height="62" Canvas.Left="358.778" Stroke="Transparent" Canvas.Top="37.5" Width="82" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle x:Name="_194TB02" Height="55" Canvas.Left="196.098" Stroke="Transparent" Canvas.Top="37.5" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <Rectangle x:Name="light_diot" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="251.245" Canvas.Top="200.027" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_194BB50" Fill="#7FADFF2F" Opacity="0" Height="71" Canvas.Left="358.778" Canvas.Top="201.377" Width="70">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_denKlistron" Fill="#7FADFF2F" Opacity="0" Height="81" Canvas.Left="536.551" Canvas.Top="318.57" Width="322">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="30" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_1944BB05" Fill="#7FADFF2F" Opacity="0" Height="57" Canvas.Left="896.452" Canvas.Top="242.464" Width="63" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-36.491"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_1944BB08" Fill="#7FADFF2F" Opacity="0" Height="51" Canvas.Left="970.603" Canvas.Top="193.028" Width="59" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-35.819"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_194BB72" Fill="#7FADFF2F" Opacity="0" Height="48" Canvas.Left="993.657" Canvas.Top="325.735" Width="80">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_194TB02M" Fill="#7FADFF2F" Opacity="0" Height="47" Canvas.Left="809.689" Canvas.Top="37.5" Width="81">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_Hop" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="358.778" Canvas.Top="37.5" Width="82">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="light_194TB02" Fill="#7FADFF2F" Opacity="0" Height="62" Canvas.Left="196.098" Canvas.Top="37.5" Width="92">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                </Canvas>
+            </Viewbox>
 
             <Border Grid.Column="1" Background="#1B4332" Padding="10" BorderThickness="1,0,0,0">
                 <Grid>
