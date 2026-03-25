@@ -26,8 +26,7 @@
                         <Border Width="110" Height="110" CornerRadius="55" Background="White" HorizontalAlignment="Center" BorderBrush="#EEEEEE" BorderThickness="1">
                             <Image Source="pack://application:,,,/HeThongPhat;component/Assets/Logo.png" Margin="6" Stretch="Uniform"/>
                         </Border>
-                        <TextBlock Text="Học Viện Phòng Không Không Quân" Foreground="White" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,18,0,0"/>
-                        <TextBlock Text="Khoa Rada" Foreground="White" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,6,0,0"/>
+                        <TextBlock Text="Khoa Rada" Foreground="White" FontSize="30" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,6,0,0"/>
                     </StackPanel>
                 </Grid>
             </Border>

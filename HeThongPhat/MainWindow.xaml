@@ -124,7 +124,7 @@
                             </EventTrigger>
                         </TextBlock.Triggers>
                     </TextBlock>
-                    <TextBlock Text="KHOAQSC@GMAIL.COM" FontWeight="Bold" FontSize="16" Foreground="#DC3545" Margin="5,10,0,0"/>
+                    <TextBlock Text="KHOARADAR@GMAIL.COM" FontWeight="Bold" FontSize="16" Foreground="#DC3545" Margin="5,10,0,0"/>
                 </StackPanel>
             </Grid>
         </Border>
